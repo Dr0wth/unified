@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* ========================================
+   McMaster Brand Colors
+   These CSS variables let us use consistent
+   colors throughout the app
+   ======================================== */
+:root {
+    /* Official McMaster colors */
+    --mc-maroon: #7a003c;
+    --mc-maroon-dark: #5c002d;
+    --mc-gold: #fdbf57;
+    --mc-grey: #5e6a71;
+
+    /* UI Colors - Dark Mode Default */
+    --bg-primary: #0a0a0a;      /* Main background */
+    --bg-secondary: #141414;    /* Sidebar/header background */
+    --bg-card: #1c1c1c;         /* Card/panel background */
+    --bg-hover: #262626;        /* Hover state background */
+    --text-primary: #fafafa;    /* Main text color */
+    --text-secondary: #a1a1a1;  /* Muted/secondary text */
+    --border-color: #2a2a2a;    /* Border color for cards/dividers */
+    --accent: var(--mc-maroon); /* Primary accent color */
+    --accent-gold: var(--mc-gold); /* Secondary accent */
+}
+
+/* ========================================
+   Custom Font - Geist
+   A modern, clean sans-serif font
+   ======================================== */
+@font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+    box-sizing: border-box; /* Makes width/height include padding and border */
+}
+
+body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;  /* Smoother fonts on Mac */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Custom Scrollbar
+   Makes scrollbars match our dark theme
+   ======================================== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mc-maroon); /* Maroon on hover */
+}
